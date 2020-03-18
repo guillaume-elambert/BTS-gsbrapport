@@ -17,16 +17,18 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `dbs210068`
+-- Base de données :  `gsbRapport_lietard_elambert`
 --
+
+CREATE DATABASE IF NOT EXISTS `gsbRapport_lietard_elambert`;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `ACTIVITE_COMPL`
+-- Structure de la table `gsbRapport_lietard_elambert`.`ACTIVITE_COMPL`
 --
 
-CREATE TABLE `ACTIVITE_COMPL` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`ACTIVITE_COMPL` (
   `AC_NUM` int(11) NOT NULL,
   `AC_DATE` datetime DEFAULT NULL,
   `AC_LIEU` varchar(25) COLLATE latin1_bin DEFAULT NULL,
@@ -40,7 +42,7 @@ CREATE TABLE `ACTIVITE_COMPL` (
 -- Structure de la table `COLLABORATEUR`
 --
 
-CREATE TABLE `COLLABORATEUR` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`COLLABORATEUR` (
   `COL_MATRICULE` varchar(10) COLLATE latin1_bin NOT NULL,
   `COL_NOM` varchar(25) COLLATE latin1_bin DEFAULT NULL,
   `COL_PRENOM` varchar(50) COLLATE latin1_bin DEFAULT NULL,
@@ -58,7 +60,7 @@ CREATE TABLE `COLLABORATEUR` (
 -- Contenu de la table `COLLABORATEUR`
 --
 
-INSERT INTO `COLLABORATEUR` (`COL_MATRICULE`, `COL_NOM`, `COL_PRENOM`, `COL_RUE`, `COL_CP`, `COL_VILLE`, `COL_DATEEMBAUCHE`, `REG_CODE`, `ID_TYPE`, `PSEUDO`, `MDP`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`COLLABORATEUR` (`COL_MATRICULE`, `COL_NOM`, `COL_PRENOM`, `COL_RUE`, `COL_CP`, `COL_VILLE`, `COL_DATEEMBAUCHE`, `REG_CODE`, `ID_TYPE`, `PSEUDO`, `MDP`) VALUES
 ('a131', 'Villechalane', 'Louis', '8 cours Lafontaine', '29000', 'BREST', '1992-12-11 00:00:00', 'IF', 1, NULL, '$2y$10$oN2LphTsOxL2xq9m5nndieoXaMBHdamKnLdHGWwXBIFgGLKV9VZHe'),
 ('a17', 'Andre', 'David', '1 r Aimon de Chissée', '38100', 'GRENOBLE', '1991-08-26 00:00:00', NULL, 1, NULL, '$2y$10$oN2LphTsOxL2xq9m5nndieoXaMBHdamKnLdHGWwXBIFgGLKV9VZHe'),
 ('a55', 'Bedos', 'Christian', '1 r Bénédictins', '65000', 'TARBES', '1987-07-17 00:00:00', NULL, 1, NULL, '$2y$10$oN2LphTsOxL2xq9m5nndieoXaMBHdamKnLdHGWwXBIFgGLKV9VZHe'),
@@ -135,7 +137,7 @@ INSERT INTO `COLLABORATEUR` (`COL_MATRICULE`, `COL_NOM`, `COL_PRENOM`, `COL_RUE`
 -- Structure de la table `COMPOSANT`
 --
 
-CREATE TABLE `COMPOSANT` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`COMPOSANT` (
   `CMP_CODE` varchar(4) COLLATE latin1_bin NOT NULL,
   `CMP_LIBELLE` varchar(25) COLLATE latin1_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
@@ -146,7 +148,7 @@ CREATE TABLE `COMPOSANT` (
 -- Structure de la table `CONSTITUER`
 --
 
-CREATE TABLE `CONSTITUER` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`CONSTITUER` (
   `MED_DEPOTLEGAL` varchar(10) COLLATE latin1_bin NOT NULL,
   `CMP_CODE` varchar(4) COLLATE latin1_bin NOT NULL,
   `CST_QTE` float DEFAULT NULL
@@ -158,7 +160,7 @@ CREATE TABLE `CONSTITUER` (
 -- Structure de la table `DOSAGE`
 --
 
-CREATE TABLE `DOSAGE` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`DOSAGE` (
   `DOS_CODE` varchar(10) COLLATE latin1_bin NOT NULL,
   `DOS_QUANTITE` varchar(10) COLLATE latin1_bin DEFAULT NULL,
   `DOS_UNITE` varchar(10) COLLATE latin1_bin DEFAULT NULL
@@ -170,7 +172,7 @@ CREATE TABLE `DOSAGE` (
 -- Structure de la table `FAMILLE`
 --
 
-CREATE TABLE `FAMILLE` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`FAMILLE` (
   `FAM_CODE` varchar(3) COLLATE latin1_bin NOT NULL,
   `FAM_LIBELLE` varchar(80) COLLATE latin1_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
@@ -179,7 +181,7 @@ CREATE TABLE `FAMILLE` (
 -- Contenu de la table `FAMILLE`
 --
 
-INSERT INTO `FAMILLE` (`FAM_CODE`, `FAM_LIBELLE`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`FAMILLE` (`FAM_CODE`, `FAM_LIBELLE`) VALUES
 ('AA', 'Antalgiques en association'),
 ('AAA', 'Antalgiques antipyrétiques en association'),
 ('AAC', 'Antidépresseur d\'action centrale'),
@@ -207,7 +209,7 @@ INSERT INTO `FAMILLE` (`FAM_CODE`, `FAM_LIBELLE`) VALUES
 -- Structure de la table `FICHE_FRAIS`
 --
 
-CREATE TABLE `FICHE_FRAIS` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`FICHE_FRAIS` (
   `FF_MOIS` varchar(20) COLLATE latin1_bin NOT NULL,
   `COL_MATRICULE` varchar(10) COLLATE latin1_bin NOT NULL,
   `FF_NBHorsClassif` int(11) DEFAULT NULL,
@@ -220,7 +222,7 @@ CREATE TABLE `FICHE_FRAIS` (
 -- Structure de la table `FORMULER`
 --
 
-CREATE TABLE `FORMULER` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`FORMULER` (
   `MED_DEPOTLEGAL` varchar(10) COLLATE latin1_bin NOT NULL,
   `PRE_CODE` varchar(2) COLLATE latin1_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
@@ -231,7 +233,7 @@ CREATE TABLE `FORMULER` (
 -- Structure de la table `INCLURE`
 --
 
-CREATE TABLE `INCLURE` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`INCLURE` (
   `FF_MOIS` varchar(20) COLLATE latin1_bin NOT NULL,
   `COL_MATRICULE` varchar(10) COLLATE latin1_bin NOT NULL,
   `TF_CODE` int(11) NOT NULL,
@@ -245,7 +247,7 @@ CREATE TABLE `INCLURE` (
 -- Structure de la table `INTERAGIR`
 --
 
-CREATE TABLE `INTERAGIR` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`INTERAGIR` (
   `MED_PERTURBATEUR` varchar(10) COLLATE latin1_bin NOT NULL,
   `MED_MED_PERTURBE` varchar(10) COLLATE latin1_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
@@ -256,7 +258,7 @@ CREATE TABLE `INTERAGIR` (
 -- Structure de la table `INVITER`
 --
 
-CREATE TABLE `INVITER` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`INVITER` (
   `AC_NUM` int(11) NOT NULL,
   `PRA_NUM` smallint(6) NOT NULL,
   `SPECIALISTEON` tinyint(1) DEFAULT NULL
@@ -268,7 +270,7 @@ CREATE TABLE `INVITER` (
 -- Structure de la table `MEDICAMENT`
 --
 
-CREATE TABLE `MEDICAMENT` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`MEDICAMENT` (
   `MED_DEPOTLEGAL` varchar(10) COLLATE latin1_bin NOT NULL,
   `MED_NOMCOMMERCIAL` varchar(25) COLLATE latin1_bin DEFAULT NULL,
   `FAM_CODE` varchar(3) COLLATE latin1_bin NOT NULL,
@@ -282,7 +284,7 @@ CREATE TABLE `MEDICAMENT` (
 -- Contenu de la table `MEDICAMENT`
 --
 
-INSERT INTO `MEDICAMENT` (`MED_DEPOTLEGAL`, `MED_NOMCOMMERCIAL`, `FAM_CODE`, `MED_COMPOSITION`, `MED_EFFETS`, `MED_CONTREINDIC`, `MED_PRIXECHANTILLON`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`MEDICAMENT` (`MED_DEPOTLEGAL`, `MED_NOMCOMMERCIAL`, `FAM_CODE`, `MED_COMPOSITION`, `MED_EFFETS`, `MED_CONTREINDIC`, `MED_PRIXECHANTILLON`) VALUES
 ('3MYC7', 'TRIMYCINE', 'CRT', 'Triamcinolone (acétonide) + Néomycine + Nystatine', 'Ce médicament est un corticoïde à  activité forte ou très forte associé à  un antibiotique et un antifongique, utilisé en application locale dans certaines atteintes cutanées surinfectées.', 'Ce médicament est contre-indiqué en cas d\'allergie à  l\'un des constituants, d\'infections de la peau ou de parasitisme non traités, d\'acné. Ne pas appliquer sur une plaie, ni sous un pansement occlusif.', NULL),
 ('ADIMOL9', 'ADIMOL', 'ABP', 'Amoxicilline + Acide clavulanique', 'Ce médicament, plus puissant que les pénicillines simples, est utilisé pour traiter des infections bactériennes spécifiques.', 'Ce médicament est contre-indiqué en cas d\'allergie aux pénicillines ou aux céphalosporines.', NULL),
 ('AMOPIL7', 'AMOPIL', 'ABP', 'Amoxicilline', 'Ce médicament, plus puissant que les pénicillines simples, est utilisé pour traiter des infections bactériennes spécifiques.', 'Ce médicament est contre-indiqué en cas d\'allergie aux pénicillines. Il doit être administré avec prudence en cas d\'allergie aux céphalosporines.', NULL),
@@ -318,7 +320,7 @@ INSERT INTO `MEDICAMENT` (`MED_DEPOTLEGAL`, `MED_NOMCOMMERCIAL`, `FAM_CODE`, `ME
 -- Structure de la table `OFFRIR`
 --
 
-CREATE TABLE `OFFRIR` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`OFFRIR` (
   `COL_MATRICULE` varchar(10) COLLATE latin1_bin NOT NULL,
   `VIS_NUM` int(11) NOT NULL,
   `MED_DEPOTLEGAL` varchar(10) COLLATE latin1_bin NOT NULL,
@@ -329,7 +331,7 @@ CREATE TABLE `OFFRIR` (
 -- Contenu de la table `OFFRIR`
 --
 
-INSERT INTO `OFFRIR` (`COL_MATRICULE`, `VIS_NUM`, `MED_DEPOTLEGAL`, `OFF_QTE`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`OFFRIR` (`COL_MATRICULE`, `VIS_NUM`, `MED_DEPOTLEGAL`, `OFF_QTE`) VALUES
 ('a131', 9, 'BACTIV13', 1),
 ('a131', 9, 'DOLRIL7', 9),
 ('a131', 10, 'ADIMOL9', 7),
@@ -362,7 +364,7 @@ INSERT INTO `OFFRIR` (`COL_MATRICULE`, `VIS_NUM`, `MED_DEPOTLEGAL`, `OFF_QTE`) V
 -- Structure de la table `POSSEDER`
 --
 
-CREATE TABLE `POSSEDER` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`POSSEDER` (
   `PRA_NUM` smallint(6) NOT NULL,
   `SPE_CODE` varchar(5) COLLATE latin1_bin NOT NULL,
   `POS_DIPLOME` varchar(10) COLLATE latin1_bin DEFAULT NULL,
@@ -375,7 +377,7 @@ CREATE TABLE `POSSEDER` (
 -- Structure de la table `PRATICIEN`
 --
 
-CREATE TABLE `PRATICIEN` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`PRATICIEN` (
   `PRA_NUM` smallint(6) NOT NULL,
   `PRA_NOM` varchar(25) COLLATE latin1_bin DEFAULT NULL,
   `PRA_PRENOM` varchar(30) COLLATE latin1_bin DEFAULT NULL,
@@ -391,7 +393,7 @@ CREATE TABLE `PRATICIEN` (
 -- Contenu de la table `PRATICIEN`
 --
 
-INSERT INTO `PRATICIEN` (`PRA_NUM`, `PRA_NOM`, `PRA_PRENOM`, `PRA_RUE`, `PRA_CP`, `PRA_VILLE`, `PRA_COEFNOTORIETE`, `COEFFCONFIANCE`, `TYP_CODE`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`PRATICIEN` (`PRA_NUM`, `PRA_NOM`, `PRA_PRENOM`, `PRA_RUE`, `PRA_CP`, `PRA_VILLE`, `PRA_COEFNOTORIETE`, `COEFFCONFIANCE`, `TYP_CODE`) VALUES
 (1, 'Notini', 'Alain', '114 r Authie', '85000', 'LA ROCHE SUR YON', 290.03, NULL, 'MH'),
 (2, 'Gosselin', 'Albert', '13 r Devon', '41000', 'BLOIS', 307.49, NULL, 'MV'),
 (3, 'Delahaye', 'André', '36 av 6 Juin', '25000', 'BESANCON', 185.79, NULL, 'PS'),
@@ -485,7 +487,7 @@ INSERT INTO `PRATICIEN` (`PRA_NUM`, `PRA_NOM`, `PRA_PRENOM`, `PRA_RUE`, `PRA_CP`
 -- Structure de la table `PRESCRIRE`
 --
 
-CREATE TABLE `PRESCRIRE` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`PRESCRIRE` (
   `MED_DEPOTLEGAL` varchar(10) COLLATE latin1_bin NOT NULL,
   `TIN_CODE` varchar(5) COLLATE latin1_bin NOT NULL,
   `DOS_CODE` varchar(10) COLLATE latin1_bin NOT NULL,
@@ -498,7 +500,7 @@ CREATE TABLE `PRESCRIRE` (
 -- Structure de la table `PRESENTATION`
 --
 
-CREATE TABLE `PRESENTATION` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`PRESENTATION` (
   `PRE_CODE` varchar(2) COLLATE latin1_bin NOT NULL,
   `PRE_LIBELLE` varchar(20) COLLATE latin1_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
@@ -509,7 +511,7 @@ CREATE TABLE `PRESENTATION` (
 -- Structure de la table `REALISER`
 --
 
-CREATE TABLE `REALISER` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`REALISER` (
   `AC_NUM` int(11) NOT NULL,
   `COL_MATRICULE` varchar(10) COLLATE latin1_bin NOT NULL,
   `REA_MTTFRAIS` float DEFAULT NULL
@@ -521,7 +523,7 @@ CREATE TABLE `REALISER` (
 -- Structure de la table `REGION`
 --
 
-CREATE TABLE `REGION` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`REGION` (
   `REG_CODE` varchar(2) COLLATE latin1_bin NOT NULL,
   `SEC_CODE` varchar(1) COLLATE latin1_bin NOT NULL,
   `REG_NOM` varchar(50) COLLATE latin1_bin DEFAULT NULL
@@ -531,7 +533,7 @@ CREATE TABLE `REGION` (
 -- Contenu de la table `REGION`
 --
 
-INSERT INTO `REGION` (`REG_CODE`, `SEC_CODE`, `REG_NOM`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`REGION` (`REG_CODE`, `SEC_CODE`, `REG_NOM`) VALUES
 ('AL', 'E', 'Alsace Lorraine'),
 ('AQ', 'S', 'Aquitaine'),
 ('AU', 'P', 'Auvergne'),
@@ -561,7 +563,7 @@ INSERT INTO `REGION` (`REG_CODE`, `SEC_CODE`, `REG_NOM`) VALUES
 -- Structure de la table `SECTEUR`
 --
 
-CREATE TABLE `SECTEUR` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`SECTEUR` (
   `SEC_CODE` varchar(1) COLLATE latin1_bin NOT NULL,
   `SEC_LIBELLE` varchar(15) COLLATE latin1_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
@@ -570,7 +572,7 @@ CREATE TABLE `SECTEUR` (
 -- Contenu de la table `SECTEUR`
 --
 
-INSERT INTO `SECTEUR` (`SEC_CODE`, `SEC_LIBELLE`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`SECTEUR` (`SEC_CODE`, `SEC_LIBELLE`) VALUES
 ('E', 'Est'),
 ('N', 'Nord'),
 ('O', 'Ouest'),
@@ -583,7 +585,7 @@ INSERT INTO `SECTEUR` (`SEC_CODE`, `SEC_LIBELLE`) VALUES
 -- Structure de la table `SPECIALITE`
 --
 
-CREATE TABLE `SPECIALITE` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`SPECIALITE` (
   `SPE_CODE` varchar(5) COLLATE latin1_bin NOT NULL,
   `SPE_LIBELLE` varchar(150) COLLATE latin1_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
@@ -592,7 +594,7 @@ CREATE TABLE `SPECIALITE` (
 -- Contenu de la table `SPECIALITE`
 --
 
-INSERT INTO `SPECIALITE` (`SPE_CODE`, `SPE_LIBELLE`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`SPECIALITE` (`SPE_CODE`, `SPE_LIBELLE`) VALUES
 ('ACP', 'anatomie et cytologie pathologiques'),
 ('AMV', 'angéiologie, médecine vasculaire'),
 ('ARC', 'anesthésiologie et réanimation chirurgicale'),
@@ -644,7 +646,7 @@ INSERT INTO `SPECIALITE` (`SPE_CODE`, `SPE_LIBELLE`) VALUES
 -- Structure de la table `Switchboard Items`
 --
 
-CREATE TABLE `Switchboard Items` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`Switchboard Items` (
   `SwitchboardID` int(11) NOT NULL,
   `ItemNumber` smallint(6) NOT NULL,
   `ItemText` varchar(255) COLLATE latin1_bin DEFAULT NULL,
@@ -656,7 +658,7 @@ CREATE TABLE `Switchboard Items` (
 -- Contenu de la table `Switchboard Items`
 --
 
-INSERT INTO `Switchboard Items` (`SwitchboardID`, `ItemNumber`, `ItemText`, `Command`, `Argument`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`Switchboard Items` (`SwitchboardID`, `ItemNumber`, `ItemText`, `Command`, `Argument`) VALUES
 (1, 0, 'Gestion des comptes rendus', NULL, 'Par défaut'),
 (1, 1, 'Comptes-Rendus', 3, 'VISITE'),
 (1, 2, 'Visiteurs', 3, 'F_VISITEUR'),
@@ -670,7 +672,7 @@ INSERT INTO `Switchboard Items` (`SwitchboardID`, `ItemNumber`, `ItemText`, `Com
 -- Structure de la table `TRAVAILLER`
 --
 
-CREATE TABLE `TRAVAILLER` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`TRAVAILLER` (
   `COL_MATRICULE` varchar(10) COLLATE latin1_bin NOT NULL,
   `JJMMAA` datetime NOT NULL,
   `REG_CODE` varchar(2) COLLATE latin1_bin NOT NULL,
@@ -681,7 +683,7 @@ CREATE TABLE `TRAVAILLER` (
 -- Contenu de la table `TRAVAILLER`
 --
 
-INSERT INTO `TRAVAILLER` (`COL_MATRICULE`, `JJMMAA`, `REG_CODE`, `TRA_ROLE`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`TRAVAILLER` (`COL_MATRICULE`, `JJMMAA`, `REG_CODE`, `TRA_ROLE`) VALUES
 ('p49', '1977-10-03 00:00:00', 'CE', 'Visiteur'),
 ('k53', '1983-03-23 00:00:00', 'CA', 'Visiteur'),
 ('r24', '1984-07-29 00:00:00', 'BN', 'Visiteur'),
@@ -773,7 +775,7 @@ INSERT INTO `TRAVAILLER` (`COL_MATRICULE`, `JJMMAA`, `REG_CODE`, `TRA_ROLE`) VAL
 -- Structure de la table `TYPE_COLLABORATEUR`
 --
 
-CREATE TABLE `TYPE_COLLABORATEUR` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`TYPE_COLLABORATEUR` (
   `ID_TYPE` int(11) NOT NULL DEFAULT '1',
   `LIB_TYPE` varchar(80) COLLATE latin1_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
@@ -782,7 +784,7 @@ CREATE TABLE `TYPE_COLLABORATEUR` (
 -- Contenu de la table `TYPE_COLLABORATEUR`
 --
 
-INSERT INTO `TYPE_COLLABORATEUR` (`ID_TYPE`, `LIB_TYPE`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`TYPE_COLLABORATEUR` (`ID_TYPE`, `LIB_TYPE`) VALUES
 (1, 'Collaborateur'),
 (2, 'Délégué');
 
@@ -792,7 +794,7 @@ INSERT INTO `TYPE_COLLABORATEUR` (`ID_TYPE`, `LIB_TYPE`) VALUES
 -- Structure de la table `TYPE_FRAIS`
 --
 
-CREATE TABLE `TYPE_FRAIS` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`TYPE_FRAIS` (
   `TF_CODE` int(11) NOT NULL,
   `TF_LIB` varchar(50) COLLATE latin1_bin DEFAULT NULL,
   `TF_FORFAIT` varchar(30) COLLATE latin1_bin DEFAULT NULL
@@ -804,7 +806,7 @@ CREATE TABLE `TYPE_FRAIS` (
 -- Structure de la table `TYPE_INDIVIDU`
 --
 
-CREATE TABLE `TYPE_INDIVIDU` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`TYPE_INDIVIDU` (
   `TIN_CODE` varchar(5) COLLATE latin1_bin NOT NULL,
   `TIN_LIBELLE` varchar(50) COLLATE latin1_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
@@ -815,7 +817,7 @@ CREATE TABLE `TYPE_INDIVIDU` (
 -- Structure de la table `TYPE_MOTIF`
 --
 
-CREATE TABLE `TYPE_MOTIF` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`TYPE_MOTIF` (
   `ID_MOTIF` int(11) NOT NULL,
   `LIB_MOTIF` varchar(100) COLLATE latin1_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_bin;
@@ -824,7 +826,7 @@ CREATE TABLE `TYPE_MOTIF` (
 -- Contenu de la table `TYPE_MOTIF`
 --
 
-INSERT INTO `TYPE_MOTIF` (`ID_MOTIF`, `LIB_MOTIF`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`TYPE_MOTIF` (`ID_MOTIF`, `LIB_MOTIF`) VALUES
 (1, 'Actualisation annuelle'),
 (2, 'Rapport Annuel'),
 (3, 'Baisse activité');
@@ -835,7 +837,7 @@ INSERT INTO `TYPE_MOTIF` (`ID_MOTIF`, `LIB_MOTIF`) VALUES
 -- Structure de la table `TYPE_PRATICIEN`
 --
 
-CREATE TABLE `TYPE_PRATICIEN` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`TYPE_PRATICIEN` (
   `TYP_CODE` varchar(3) COLLATE latin1_bin NOT NULL,
   `TYP_LIBELLE` varchar(25) COLLATE latin1_bin DEFAULT NULL,
   `TYP_LIEU` varchar(35) COLLATE latin1_bin DEFAULT NULL
@@ -845,7 +847,7 @@ CREATE TABLE `TYPE_PRATICIEN` (
 -- Contenu de la table `TYPE_PRATICIEN`
 --
 
-INSERT INTO `TYPE_PRATICIEN` (`TYP_CODE`, `TYP_LIBELLE`, `TYP_LIEU`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`TYPE_PRATICIEN` (`TYP_CODE`, `TYP_LIBELLE`, `TYP_LIEU`) VALUES
 ('MH', 'Médecin Hospitalier', 'Hopital ou clinique'),
 ('MV', 'Médecine de Ville', 'Cabinet'),
 ('PH', 'Pharmacien Hospitalier', 'Hopital ou clinique'),
@@ -858,7 +860,7 @@ INSERT INTO `TYPE_PRATICIEN` (`TYP_CODE`, `TYP_LIBELLE`, `TYP_LIEU`) VALUES
 -- Structure de la table `VISITE`
 --
 
-CREATE TABLE `VISITE` (
+CREATE TABLE `gsbRapport_lietard_elambert`.`VISITE` (
   `COL_MATRICULE` varchar(10) COLLATE latin1_bin NOT NULL,
   `VIS_NUM` int(11) NOT NULL,
   `PRA_NUM` smallint(6) NOT NULL,
@@ -878,7 +880,7 @@ CREATE TABLE `VISITE` (
 -- Contenu de la table `VISITE`
 --
 
-INSERT INTO `VISITE` (`COL_MATRICULE`, `VIS_NUM`, `PRA_NUM`, `REMPLACANTS`, `VIS_DATE`, `VIS_BILAN`, `VIS_DATESAISIE`, `ETAT_RAPPORT`, `CONSULTE`, `ID_MOTIF`, `AUTRE_MOTIF`, `MED_PRESENTE1`, `MED_PRESENTE2`) VALUES
+INSERT INTO `gsbRapport_lietard_elambert`.`VISITE` (`COL_MATRICULE`, `VIS_NUM`, `PRA_NUM`, `REMPLACANTS`, `VIS_DATE`, `VIS_BILAN`, `VIS_DATESAISIE`, `ETAT_RAPPORT`, `CONSULTE`, `ID_MOTIF`, `AUTRE_MOTIF`, `MED_PRESENTE1`, `MED_PRESENTE2`) VALUES
 ('a131', 3, 23, 14, '2002-04-18 00:00:00', 'Médecin curieux, à recontacer en décembre pour réunion', NULL, 'brouillon', 0, 1, NULL, NULL, NULL),
 ('a131', 7, 41, NULL, '2020-01-14 00:00:00', 'RAS Changement de tel : 05 89 89 89 89', '2020-01-15 16:24:18', 'finalisé', 0, 1, NULL, NULL, NULL),
 ('a131', 8, 41, NULL, '2020-01-16 00:00:00', 'a', '2020-01-16 12:12:57', 'brouillon', 0, 1, NULL, NULL, NULL),
@@ -911,13 +913,13 @@ INSERT INTO `VISITE` (`COL_MATRICULE`, `VIS_NUM`, `PRA_NUM`, `REMPLACANTS`, `VIS
 --
 -- Index pour la table `ACTIVITE_COMPL`
 --
-ALTER TABLE `ACTIVITE_COMPL`
+ALTER TABLE `gsbRapport_lietard_elambert`.`ACTIVITE_COMPL`
   ADD PRIMARY KEY (`AC_NUM`);
 
 --
 -- Index pour la table `COLLABORATEUR`
 --
-ALTER TABLE `COLLABORATEUR`
+ALTER TABLE `gsbRapport_lietard_elambert`.`COLLABORATEUR`
   ADD PRIMARY KEY (`COL_MATRICULE`),
   ADD KEY `ID_TYPE` (`ID_TYPE`),
   ADD KEY `COLLABORATEUR_ibfk_2` (`REG_CODE`);
@@ -925,95 +927,95 @@ ALTER TABLE `COLLABORATEUR`
 --
 -- Index pour la table `COMPOSANT`
 --
-ALTER TABLE `COMPOSANT`
+ALTER TABLE `gsbRapport_lietard_elambert`.`COMPOSANT`
   ADD PRIMARY KEY (`CMP_CODE`);
 
 --
 -- Index pour la table `CONSTITUER`
 --
-ALTER TABLE `CONSTITUER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`CONSTITUER`
   ADD PRIMARY KEY (`MED_DEPOTLEGAL`,`CMP_CODE`),
   ADD KEY `CMP_CODE` (`CMP_CODE`);
 
 --
 -- Index pour la table `DOSAGE`
 --
-ALTER TABLE `DOSAGE`
+ALTER TABLE `gsbRapport_lietard_elambert`.`DOSAGE`
   ADD PRIMARY KEY (`DOS_CODE`);
 
 --
 -- Index pour la table `FAMILLE`
 --
-ALTER TABLE `FAMILLE`
+ALTER TABLE `gsbRapport_lietard_elambert`.`FAMILLE`
   ADD PRIMARY KEY (`FAM_CODE`);
 
 --
 -- Index pour la table `FICHE_FRAIS`
 --
-ALTER TABLE `FICHE_FRAIS`
+ALTER TABLE `gsbRapport_lietard_elambert`.`FICHE_FRAIS`
   ADD PRIMARY KEY (`FF_MOIS`,`COL_MATRICULE`),
   ADD KEY `COL_MATRICULE` (`COL_MATRICULE`);
 
 --
 -- Index pour la table `FORMULER`
 --
-ALTER TABLE `FORMULER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`FORMULER`
   ADD PRIMARY KEY (`MED_DEPOTLEGAL`,`PRE_CODE`),
   ADD KEY `PRE_CODE` (`PRE_CODE`);
 
 --
 -- Index pour la table `INCLURE`
 --
-ALTER TABLE `INCLURE`
+ALTER TABLE `gsbRapport_lietard_elambert`.`INCLURE`
   ADD PRIMARY KEY (`FF_MOIS`,`COL_MATRICULE`,`TF_CODE`),
   ADD KEY `TF_CODE` (`TF_CODE`);
 
 --
 -- Index pour la table `INTERAGIR`
 --
-ALTER TABLE `INTERAGIR`
+ALTER TABLE `gsbRapport_lietard_elambert`.`INTERAGIR`
   ADD PRIMARY KEY (`MED_PERTURBATEUR`,`MED_MED_PERTURBE`),
   ADD KEY `MED_MED_PERTURBE` (`MED_MED_PERTURBE`);
 
 --
 -- Index pour la table `INVITER`
 --
-ALTER TABLE `INVITER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`INVITER`
   ADD PRIMARY KEY (`AC_NUM`,`PRA_NUM`),
   ADD KEY `PRA_NUM` (`PRA_NUM`);
 
 --
 -- Index pour la table `MEDICAMENT`
 --
-ALTER TABLE `MEDICAMENT`
+ALTER TABLE `gsbRapport_lietard_elambert`.`MEDICAMENT`
   ADD PRIMARY KEY (`MED_DEPOTLEGAL`),
   ADD KEY `FAM_CODE` (`FAM_CODE`);
 
 --
 -- Index pour la table `OFFRIR`
 --
-ALTER TABLE `OFFRIR`
+ALTER TABLE `gsbRapport_lietard_elambert`.`OFFRIR`
   ADD PRIMARY KEY (`COL_MATRICULE`,`VIS_NUM`,`MED_DEPOTLEGAL`),
   ADD KEY `MED_DEPOTLEGAL` (`MED_DEPOTLEGAL`);
 
 --
 -- Index pour la table `POSSEDER`
 --
-ALTER TABLE `POSSEDER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`POSSEDER`
   ADD PRIMARY KEY (`PRA_NUM`,`SPE_CODE`),
   ADD KEY `SPE_CODE` (`SPE_CODE`);
 
 --
 -- Index pour la table `PRATICIEN`
 --
-ALTER TABLE `PRATICIEN`
+ALTER TABLE `gsbRapport_lietard_elambert`.`PRATICIEN`
   ADD PRIMARY KEY (`PRA_NUM`),
   ADD KEY `TYP_CODE` (`TYP_CODE`);
 
 --
 -- Index pour la table `PRESCRIRE`
 --
-ALTER TABLE `PRESCRIRE`
+ALTER TABLE `gsbRapport_lietard_elambert`.`PRESCRIRE`
   ADD PRIMARY KEY (`MED_DEPOTLEGAL`,`TIN_CODE`,`DOS_CODE`),
   ADD KEY `TIN_CODE` (`TIN_CODE`),
   ADD KEY `DOS_CODE` (`DOS_CODE`);
@@ -1021,45 +1023,45 @@ ALTER TABLE `PRESCRIRE`
 --
 -- Index pour la table `PRESENTATION`
 --
-ALTER TABLE `PRESENTATION`
+ALTER TABLE `gsbRapport_lietard_elambert`.`PRESENTATION`
   ADD PRIMARY KEY (`PRE_CODE`);
 
 --
 -- Index pour la table `REALISER`
 --
-ALTER TABLE `REALISER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`REALISER`
   ADD PRIMARY KEY (`AC_NUM`,`COL_MATRICULE`),
   ADD KEY `COL_MATRICULE` (`COL_MATRICULE`);
 
 --
 -- Index pour la table `REGION`
 --
-ALTER TABLE `REGION`
+ALTER TABLE `gsbRapport_lietard_elambert`.`REGION`
   ADD PRIMARY KEY (`REG_CODE`),
   ADD KEY `SEC_CODE` (`SEC_CODE`);
 
 --
 -- Index pour la table `SECTEUR`
 --
-ALTER TABLE `SECTEUR`
+ALTER TABLE `gsbRapport_lietard_elambert`.`SECTEUR`
   ADD PRIMARY KEY (`SEC_CODE`);
 
 --
 -- Index pour la table `SPECIALITE`
 --
-ALTER TABLE `SPECIALITE`
+ALTER TABLE `gsbRapport_lietard_elambert`.`SPECIALITE`
   ADD PRIMARY KEY (`SPE_CODE`);
 
 --
 -- Index pour la table `Switchboard Items`
 --
-ALTER TABLE `Switchboard Items`
+ALTER TABLE `gsbRapport_lietard_elambert`.`Switchboard Items`
   ADD PRIMARY KEY (`SwitchboardID`,`ItemNumber`);
 
 --
 -- Index pour la table `TRAVAILLER`
 --
-ALTER TABLE `TRAVAILLER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`TRAVAILLER`
   ADD PRIMARY KEY (`JJMMAA`,`COL_MATRICULE`,`REG_CODE`),
   ADD KEY `REG_CODE` (`REG_CODE`),
   ADD KEY `COL_MATRICULE` (`COL_MATRICULE`);
@@ -1067,37 +1069,37 @@ ALTER TABLE `TRAVAILLER`
 --
 -- Index pour la table `TYPE_COLLABORATEUR`
 --
-ALTER TABLE `TYPE_COLLABORATEUR`
+ALTER TABLE `gsbRapport_lietard_elambert`.`TYPE_COLLABORATEUR`
   ADD PRIMARY KEY (`ID_TYPE`);
 
 --
 -- Index pour la table `TYPE_FRAIS`
 --
-ALTER TABLE `TYPE_FRAIS`
+ALTER TABLE `gsbRapport_lietard_elambert`.`TYPE_FRAIS`
   ADD PRIMARY KEY (`TF_CODE`);
 
 --
 -- Index pour la table `TYPE_INDIVIDU`
 --
-ALTER TABLE `TYPE_INDIVIDU`
+ALTER TABLE `gsbRapport_lietard_elambert`.`TYPE_INDIVIDU`
   ADD PRIMARY KEY (`TIN_CODE`);
 
 --
 -- Index pour la table `TYPE_MOTIF`
 --
-ALTER TABLE `TYPE_MOTIF`
+ALTER TABLE `gsbRapport_lietard_elambert`.`TYPE_MOTIF`
   ADD PRIMARY KEY (`ID_MOTIF`);
 
 --
 -- Index pour la table `TYPE_PRATICIEN`
 --
-ALTER TABLE `TYPE_PRATICIEN`
+ALTER TABLE `gsbRapport_lietard_elambert`.`TYPE_PRATICIEN`
   ADD PRIMARY KEY (`TYP_CODE`);
 
 --
 -- Index pour la table `VISITE`
 --
-ALTER TABLE `VISITE`
+ALTER TABLE `gsbRapport_lietard_elambert`.`VISITE`
   ADD PRIMARY KEY (`COL_MATRICULE`,`VIS_NUM`),
   ADD KEY `MED_PRESENTE1` (`MED_PRESENTE1`),
   ADD KEY `MED_PRESENTE2` (`MED_PRESENTE2`),
@@ -1112,7 +1114,7 @@ ALTER TABLE `VISITE`
 --
 -- AUTO_INCREMENT pour la table `ACTIVITE_COMPL`
 --
-ALTER TABLE `ACTIVITE_COMPL`
+ALTER TABLE `gsbRapport_lietard_elambert`.`ACTIVITE_COMPL`
   MODIFY `AC_NUM` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Contraintes pour les tables exportées
@@ -1121,81 +1123,81 @@ ALTER TABLE `ACTIVITE_COMPL`
 --
 -- Contraintes pour la table `COLLABORATEUR`
 --
-ALTER TABLE `COLLABORATEUR`
+ALTER TABLE `gsbRapport_lietard_elambert`.`COLLABORATEUR`
   ADD CONSTRAINT `COLLABORATEUR_ibfk_1` FOREIGN KEY (`ID_TYPE`) REFERENCES `TYPE_COLLABORATEUR` (`ID_TYPE`),
   ADD CONSTRAINT `COLLABORATEUR_ibfk_2` FOREIGN KEY (`REG_CODE`) REFERENCES `REGION` (`REG_CODE`);
 
 --
 -- Contraintes pour la table `CONSTITUER`
 --
-ALTER TABLE `CONSTITUER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`CONSTITUER`
   ADD CONSTRAINT `CONSTITUER_ibfk_1` FOREIGN KEY (`CMP_CODE`) REFERENCES `COMPOSANT` (`CMP_CODE`),
   ADD CONSTRAINT `CONSTITUER_ibfk_2` FOREIGN KEY (`MED_DEPOTLEGAL`) REFERENCES `MEDICAMENT` (`MED_DEPOTLEGAL`);
 
 --
 -- Contraintes pour la table `FICHE_FRAIS`
 --
-ALTER TABLE `FICHE_FRAIS`
+ALTER TABLE `gsbRapport_lietard_elambert`.`FICHE_FRAIS`
   ADD CONSTRAINT `FICHE_FRAIS_ibfk_1` FOREIGN KEY (`COL_MATRICULE`) REFERENCES `COLLABORATEUR` (`COL_MATRICULE`);
 
 --
 -- Contraintes pour la table `FORMULER`
 --
-ALTER TABLE `FORMULER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`FORMULER`
   ADD CONSTRAINT `FORMULER_ibfk_1` FOREIGN KEY (`PRE_CODE`) REFERENCES `PRESENTATION` (`PRE_CODE`),
   ADD CONSTRAINT `FORMULER_ibfk_2` FOREIGN KEY (`MED_DEPOTLEGAL`) REFERENCES `MEDICAMENT` (`MED_DEPOTLEGAL`);
 
 --
 -- Contraintes pour la table `INCLURE`
 --
-ALTER TABLE `INCLURE`
+ALTER TABLE `gsbRapport_lietard_elambert`.`INCLURE`
   ADD CONSTRAINT `INCLURE_ibfk_1` FOREIGN KEY (`FF_MOIS`,`COL_MATRICULE`) REFERENCES `FICHE_FRAIS` (`FF_MOIS`, `COL_MATRICULE`),
   ADD CONSTRAINT `INCLURE_ibfk_2` FOREIGN KEY (`TF_CODE`) REFERENCES `TYPE_FRAIS` (`TF_CODE`);
 
 --
 -- Contraintes pour la table `INTERAGIR`
 --
-ALTER TABLE `INTERAGIR`
+ALTER TABLE `gsbRapport_lietard_elambert`.`INTERAGIR`
   ADD CONSTRAINT `INTERAGIR_ibfk_1` FOREIGN KEY (`MED_PERTURBATEUR`) REFERENCES `MEDICAMENT` (`MED_DEPOTLEGAL`),
   ADD CONSTRAINT `INTERAGIR_ibfk_2` FOREIGN KEY (`MED_MED_PERTURBE`) REFERENCES `MEDICAMENT` (`MED_DEPOTLEGAL`);
 
 --
 -- Contraintes pour la table `INVITER`
 --
-ALTER TABLE `INVITER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`INVITER`
   ADD CONSTRAINT `INVITER_ibfk_1` FOREIGN KEY (`AC_NUM`) REFERENCES `ACTIVITE_COMPL` (`AC_NUM`),
   ADD CONSTRAINT `INVITER_ibfk_2` FOREIGN KEY (`PRA_NUM`) REFERENCES `PRATICIEN` (`PRA_NUM`);
 
 --
 -- Contraintes pour la table `MEDICAMENT`
 --
-ALTER TABLE `MEDICAMENT`
+ALTER TABLE `gsbRapport_lietard_elambert`.`MEDICAMENT`
   ADD CONSTRAINT `MEDICAMENT_ibfk_1` FOREIGN KEY (`FAM_CODE`) REFERENCES `FAMILLE` (`FAM_CODE`);
 
 --
 -- Contraintes pour la table `OFFRIR`
 --
-ALTER TABLE `OFFRIR`
+ALTER TABLE `gsbRapport_lietard_elambert`.`OFFRIR`
   ADD CONSTRAINT `OFFRIR_ibfk_1` FOREIGN KEY (`MED_DEPOTLEGAL`) REFERENCES `MEDICAMENT` (`MED_DEPOTLEGAL`),
   ADD CONSTRAINT `OFFRIR_ibfk_2` FOREIGN KEY (`COL_MATRICULE`,`VIS_NUM`) REFERENCES `VISITE` (`COL_MATRICULE`, `VIS_NUM`);
 
 --
 -- Contraintes pour la table `POSSEDER`
 --
-ALTER TABLE `POSSEDER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`POSSEDER`
   ADD CONSTRAINT `POSSEDER_ibfk_1` FOREIGN KEY (`SPE_CODE`) REFERENCES `SPECIALITE` (`SPE_CODE`),
   ADD CONSTRAINT `POSSEDER_ibfk_2` FOREIGN KEY (`PRA_NUM`) REFERENCES `PRATICIEN` (`PRA_NUM`);
 
 --
 -- Contraintes pour la table `PRATICIEN`
 --
-ALTER TABLE `PRATICIEN`
+ALTER TABLE `gsbRapport_lietard_elambert`.`PRATICIEN`
   ADD CONSTRAINT `PRATICIEN_ibfk_1` FOREIGN KEY (`TYP_CODE`) REFERENCES `TYPE_PRATICIEN` (`TYP_CODE`);
 
 --
 -- Contraintes pour la table `PRESCRIRE`
 --
-ALTER TABLE `PRESCRIRE`
+ALTER TABLE `gsbRapport_lietard_elambert`.`PRESCRIRE`
   ADD CONSTRAINT `PRESCRIRE_ibfk_1` FOREIGN KEY (`MED_DEPOTLEGAL`) REFERENCES `MEDICAMENT` (`MED_DEPOTLEGAL`),
   ADD CONSTRAINT `PRESCRIRE_ibfk_2` FOREIGN KEY (`TIN_CODE`) REFERENCES `TYPE_INDIVIDU` (`TIN_CODE`),
   ADD CONSTRAINT `PRESCRIRE_ibfk_3` FOREIGN KEY (`DOS_CODE`) REFERENCES `DOSAGE` (`DOS_CODE`);
@@ -1203,27 +1205,27 @@ ALTER TABLE `PRESCRIRE`
 --
 -- Contraintes pour la table `REALISER`
 --
-ALTER TABLE `REALISER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`REALISER`
   ADD CONSTRAINT `REALISER_ibfk_1` FOREIGN KEY (`AC_NUM`) REFERENCES `ACTIVITE_COMPL` (`AC_NUM`),
   ADD CONSTRAINT `REALISER_ibfk_2` FOREIGN KEY (`COL_MATRICULE`) REFERENCES `COLLABORATEUR` (`COL_MATRICULE`);
 
 --
 -- Contraintes pour la table `REGION`
 --
-ALTER TABLE `REGION`
+ALTER TABLE `gsbRapport_lietard_elambert`.`REGION`
   ADD CONSTRAINT `REGION_ibfk_1` FOREIGN KEY (`SEC_CODE`) REFERENCES `SECTEUR` (`SEC_CODE`);
 
 --
 -- Contraintes pour la table `TRAVAILLER`
 --
-ALTER TABLE `TRAVAILLER`
+ALTER TABLE `gsbRapport_lietard_elambert`.`TRAVAILLER`
   ADD CONSTRAINT `TRAVAILLER_ibfk_1` FOREIGN KEY (`REG_CODE`) REFERENCES `REGION` (`REG_CODE`),
   ADD CONSTRAINT `TRAVAILLER_ibfk_2` FOREIGN KEY (`COL_MATRICULE`) REFERENCES `COLLABORATEUR` (`COL_MATRICULE`);
 
 --
 -- Contraintes pour la table `VISITE`
 --
-ALTER TABLE `VISITE`
+ALTER TABLE `gsbRapport_lietard_elambert`.`VISITE`
   ADD CONSTRAINT `VISITE_ibfk_1` FOREIGN KEY (`MED_PRESENTE1`) REFERENCES `MEDICAMENT` (`MED_DEPOTLEGAL`),
   ADD CONSTRAINT `VISITE_ibfk_2` FOREIGN KEY (`MED_PRESENTE2`) REFERENCES `MEDICAMENT` (`MED_DEPOTLEGAL`),
   ADD CONSTRAINT `VISITE_ibfk_3` FOREIGN KEY (`ID_MOTIF`) REFERENCES `TYPE_MOTIF` (`ID_MOTIF`),

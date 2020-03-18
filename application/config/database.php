@@ -74,11 +74,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 
 $db['default'] = array(
-	'dsn'	=> '',
-	'hostname' => 'db5000215145.hosting-data.io',
-	'username' => 'dbu429175',
-	'password' => 'c69z8GfuXBa2a6KN!',
-	'database' => 'dbs210068',
+	'dsn'	   => '',
+	'hostname' => 'localhost',
+	'port'	   => '3308',
+	'username' => 'root',
+	'password' => '',
+	'database' => 'gsbRapport_lietard_elambert',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
