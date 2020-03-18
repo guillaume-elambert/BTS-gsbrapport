@@ -13,3 +13,7 @@ table th, table td {
 label {
     width: 100%;
 }
+
+a {
+    cursor: pointer;
+}

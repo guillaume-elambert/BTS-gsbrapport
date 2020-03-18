@@ -28,7 +28,7 @@
 			<div class="collapse navbar-collapse" id="barreNavig">
 				<ul class="navbar-nav">
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="menuInfos" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<a class="nav-link dropdown-toggle" id="menuInfos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				        	Voir les informations de...
 				        </a>
 
@@ -37,14 +37,6 @@
 					        <a class="dropdown-item" title="Voir les informations d'un médicament" href="<?php echo site_url('/c_voir_infos/voirInfos/MEDICAMENT')?>">Medicament</a>
 				        </div>
 				    </li>
-
-					<!--li class="nav-item">
-						<a class="nav-link" href="" title="VoirPraticien">Voir les informations d'un praticien</a>
-					</li>
-
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo site_url('/c_voir_infos/voirInfos/MEDICAMENT')?>" title="VoirMedicament">Voir les informations d'un medicament</a>
-					</li-->
 
 					<?php
 						if(isset($this->session->matricule)){ ?>
