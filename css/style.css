@@ -1,0 +1,15 @@
+body {
+    color : #007bff !important;
+}
+
+table {
+    text-align: center !important;
+}
+
+table th, table td {
+    vertical-align: middle !important;
+}
+
+label {
+    width: 100%;
+}
